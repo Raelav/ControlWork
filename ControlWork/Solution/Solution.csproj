@@ -43,21 +43,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ChainList.cs" />
     <Compile Include="Classes\ComplexNumber.cs" />
+    <Compile Include="Classes\Counter.cs" />
+    <Compile Include="Classes\Date.cs" />
+    <Compile Include="Classes\MailingAddress.cs" />
+    <Compile Include="Classes\MessageLog.cs" />
+    <Compile Include="Classes\NDimensionalVector.cs" />
+    <Compile Include="Classes\OneDArray.cs" />
+    <Compile Include="Classes\OneDStringArray.cs" />
+    <Compile Include="Classes\PlayingCard.cs" />
+    <Compile Include="Classes\Polynomial.cs" />
     <Compile Include="Classes\RationalFraction.cs" />
+    <Compile Include="Classes\Rectangle.cs" />
+    <Compile Include="Classes\SquareMatrix.cs" />
+    <Compile Include="Classes\ThreeDVector.cs" />
+    <Compile Include="Classes\TriangleABC.cs" />
     <Compile Include="Client\Client.cs" />
     <Compile Include="Client\Title.cs" />
     <Compile Include="Client\TitlePageFactory.cs" />
     <Compile Include="Enums\AdderArgument.cs" />
+    <Compile Include="Enums\PlayingCard.cs" />
     <Compile Include="Factories\ComplexNumberFactory.cs" />
+    <Compile Include="Factories\DateFactory.cs" />
+    <Compile Include="Factories\NDimensionalVectorFactory.cs" />
+    <Compile Include="Factories\PolynomialFactory.cs" />
     <Compile Include="Factories\RationalFractionFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
+    <Compile Include="Interfaces\IChainList.cs" />
     <Compile Include="Interfaces\IComplexNumber.cs" />
+    <Compile Include="Interfaces\ICounter.cs" />
+    <Compile Include="Interfaces\IDate.cs" />
+    <Compile Include="Interfaces\IMailingAddress.cs" />
+    <Compile Include="Interfaces\IMessageLog.cs" />
+    <Compile Include="Interfaces\INDimensionalVector.cs" />
+    <Compile Include="Interfaces\IOneDArray.cs" />
+    <Compile Include="Interfaces\IOneDStringArray.cs" />
+    <Compile Include="Interfaces\IPlayingCard.cs" />
+    <Compile Include="Interfaces\IPolynomial.cs" />
     <Compile Include="Interfaces\IRationalFraction.cs" />
+    <Compile Include="Interfaces\IRectangle.cs" />
+    <Compile Include="Interfaces\ISquareMatrix.cs" />
     <Compile Include="Interfaces\IStudyAssignment.cs" />
+    <Compile Include="Interfaces\IThreeDVector.cs" />
+    <Compile Include="Interfaces\ITriangleABC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

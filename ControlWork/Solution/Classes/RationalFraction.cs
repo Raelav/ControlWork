@@ -83,7 +83,6 @@ namespace Solution.Classes
         {
             var result = Adder(addend.Numerator, addend.Denumenator);
             result.Reduction();
-            //Console.Write($"{ToString()} + {addend.ToString()} = {result.ToString()}");
             return result;
         }
 
@@ -108,20 +107,15 @@ namespace Solution.Classes
         {
             var result = Adder(-subtrahend.Numerator, subtrahend.Denumenator);
             result.Reduction();
-            //Console.Write($"{ToString()} - {subtrahend.ToString()} = {result.ToString()}");
             return result;
         }
 
         public IStudyAssignment Division(IRationalFraction divider)
         {
             if (divider.Numerator == 0)
-            {
-                Console.WriteLine("Деление на 0 запрещено!");
-                return new RationalFraction();
-            }
+                throw new DivideByZeroException();
             var result = new RationalFraction(Numerator * divider.Denumenator, Denumenator * divider.Numerator);
             result.Reduction();
-            //Console.Write($"{ToString()} / {divider.ToString()} = {result.ToString()}");
             return result;
         }
 
@@ -129,7 +123,6 @@ namespace Solution.Classes
         {
             var result = new RationalFraction(Numerator * factor.Numerator, Denumenator * factor.Denumenator);
             result.Reduction();
-            //Console.Write($"{ToString()} * {factor.ToString()} = {result.ToString()}");
             return result;
         }
 
