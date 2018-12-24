@@ -21,7 +21,7 @@ namespace Solution.Factories
             return new Polynomial();
         }
 
-        public IStudyAssignment StringHandler(string value)
+        private IStudyAssignment StringHandler(string value)
         {
             var result = new Polynomial();
             var coeffArr = value.Trim().Split(new char[] { ' ' });

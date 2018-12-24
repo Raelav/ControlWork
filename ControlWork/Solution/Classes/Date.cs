@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Solution.Factories;
 using Solution.Interfaces;
+using Solution.View;
 
 namespace Solution.Classes
 {
@@ -157,36 +158,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            int service = 0;
-            Console.WriteLine(
-    @"Класс Дата
-
-Введите некоторую дату в следующем формате: 
-01.01.2001");
-            Console.WriteLine();
-            Console.WriteLine();
-
-            SolutionFactory factory = new DateFactory();
-            var first = (IDate)factory.FactoryMethod();
-
-            first.SetDate(Console.ReadLine());
-            Console.WriteLine($"Вы ввели дату {first.ToString()}");
-            Console.WriteLine();
-            first.AddOneDay();
-            Console.WriteLine($"Добавим один день - {first.ToString()}");
-
-            Console.WriteLine();
-            first.ReduceOneDay();
-            Console.WriteLine($"Убавим один день - {first.ToString()}");
-
-            Console.WriteLine();
-            Console.Write($"Теперь добавим дней к текущей дате ");
-            var addDays = Console.ReadLine();
-            if (!(string.IsNullOrEmpty(addDays) || string.IsNullOrWhiteSpace(addDays)) &&
-                int.TryParse(addDays, out service))
-                first.AddDays(service);
-            Console.WriteLine();
-            Console.WriteLine(first.ToString());
+            new DateView().Main(new DateFactory());
         }
     }
 }

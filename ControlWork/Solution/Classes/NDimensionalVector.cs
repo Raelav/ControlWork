@@ -3,6 +3,7 @@ using Solution.Factories;
 using System;
 using System.Collections.Generic;
 using Solution.Enums;
+using Solution.View;
 
 namespace Solution.Classes
 {
@@ -129,7 +130,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new NDimensionalVectorView().Main(new NDimensionalVectorFactory());
         }
     }
 }

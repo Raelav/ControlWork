@@ -87,7 +87,13 @@
     <Compile Include="Interfaces\IStudyAssignment.cs" />
     <Compile Include="Interfaces\IThreeDVector.cs" />
     <Compile Include="Interfaces\ITriangleABC.cs" />
+    <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ComplexNumberView.cs" />
+    <Compile Include="View\DateView.cs" />
+    <Compile Include="View\NDimensionalVectorView.cs" />
+    <Compile Include="View\PolynomialView.cs" />
+    <Compile Include="View\RationalFractionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

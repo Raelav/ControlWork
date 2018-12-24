@@ -2,6 +2,7 @@
 using Solution.Factories;
 using System;
 using System.Collections.Generic;
+using Solution.View;
 
 namespace Solution.Classes
 {
@@ -105,31 +106,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            Console.WriteLine(
-                @"Многочлены
-
-Введите через пробел коэффиценты чначала первого потом второго многочлена:");
-            SolutionFactory Factory = new PolynomialFactory();
-
-            var value1 = Console.ReadLine();
-            var value2 = Console.ReadLine();
-            var polinom1 = (IPolynomial)Factory.FactoryMethod(value1);
-            var polinom2 = (IPolynomial)Factory.FactoryMethod(value2);
-
-            Console.WriteLine($"Сумма полиномов - {polinom1.Add(polinom2).ToString()}");
-            Console.WriteLine();
-            Console.WriteLine($"Разность полиномов - {polinom1.Sub(polinom2).ToString()}");
-            Console.WriteLine();
-            Console.WriteLine("Обратные полиномы");
-            Console.WriteLine(polinom1.Inverse().ToString());
-            Console.WriteLine(polinom2.Inverse().ToString());
-            Console.WriteLine();
-            Console.Write("Получить коэффицент первого полинома на позиции ");
-            var index = Console.ReadLine();
-            Console.WriteLine();
-            if(int.Parse(index) >= polinom1.Count)
-                    Console.WriteLine("Такой коэффицент отсутствует");
-            else Console.WriteLine(polinom1[int.Parse(index)]);
+            new PolynomialView().Main(new PolynomialFactory());
         }
     }
 }

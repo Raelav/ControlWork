@@ -14,8 +14,8 @@ namespace Solution.Client
             new TitlePageFactory(),
             new ComplexNumberFactory(),
             new RationalFractionFactory(),
-            //new DateFactory(),
-            //new PolynomialFactory()
+            new DateFactory(),
+            new PolynomialFactory()
         };
 
         /// <summary>
