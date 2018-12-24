@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ComplexNumberTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RationalFractionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solution\Solution.csproj">

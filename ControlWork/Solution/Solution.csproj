@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\..\..\..\Downloads\autocomplete.csproj\bin\Debug\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ComplexNumber.cs" />
+    <Compile Include="Classes\RationalFraction.cs" />
     <Compile Include="Client\Client.cs" />
     <Compile Include="Client\Title.cs" />
     <Compile Include="Client\TitlePageFactory.cs" />
     <Compile Include="Enums\AdderArgument.cs" />
     <Compile Include="Factories\ComplexNumberFactory.cs" />
+    <Compile Include="Factories\RationalFractionFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
     <Compile Include="Interfaces\IComplexNumber.cs" />
+    <Compile Include="Interfaces\IRationalFraction.cs" />
     <Compile Include="Interfaces\IStudyAssignment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

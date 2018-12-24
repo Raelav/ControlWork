@@ -13,7 +13,7 @@ namespace Solution.Client
         {
             new TitlePageFactory(),
             new ComplexNumberFactory(),
-            //new RationalFractionFactory(),
+            new RationalFractionFactory(),
             //new DateFactory(),
             //new PolynomialFactory()
         };
