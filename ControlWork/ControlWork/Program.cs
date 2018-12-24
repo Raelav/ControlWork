@@ -1,4 +1,7 @@
 ﻿using System;
+using Solution.Interfaces;
+using Solution.Factories;
+using Solution.Client;
 
 namespace ControlWork
 {
@@ -6,16 +9,7 @@ namespace ControlWork
     {
         static void Main(string[] args)
         {
-            var x = new object[] { 1 };
-
-            Console.WriteLine(x.GetType());
-
-            Console.WriteLine(x[0].GetType());
-
-            if (x[0] is int)
-                Console.WriteLine("Yes");
-            else Console.WriteLine("No");
-            Console.ReadLine();
+            Client.Start();
         }
     }
 }

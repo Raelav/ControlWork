@@ -1,6 +1,7 @@
 ﻿using System;
 using Solution.Interfaces;
 using Solution.Enums;
+using Solution.Factories;
 
 namespace Solution.Classes
 {
@@ -104,7 +105,24 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(
+    @"Комплексные числа
+
+Введите поочередно 2 комплексных числа в любом из следующих форматов: 
+1 + 2i, 1, 2i, i");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            SolutionFactory factory = new ComplexNumberFactory();
+            var first = (IComplexNumber)factory.FactoryMethod(Console.ReadLine());
+            var second = (IComplexNumber)factory.FactoryMethod(Console.ReadLine());
+
+            Console.WriteLine();
+            Console.WriteLine($"Сумма этих чисел равна {first.Add(second)}");
+            Console.WriteLine();
+            Console.WriteLine($"Разность этих чисел равна {first.Sub(second)}");
+            Console.WriteLine();
+            Console.WriteLine($"Произведение этих чисел равно {first.Multiply(second)}");
         }
     }
 }

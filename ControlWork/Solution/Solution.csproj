@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ComplexNumber.cs" />
+    <Compile Include="Client\Client.cs" />
+    <Compile Include="Client\Title.cs" />
+    <Compile Include="Client\TitlePageFactory.cs" />
     <Compile Include="Enums\AdderArgument.cs" />
     <Compile Include="Factories\ComplexNumberFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
@@ -48,9 +51,7 @@
     <Compile Include="Interfaces\IStudyAssignment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

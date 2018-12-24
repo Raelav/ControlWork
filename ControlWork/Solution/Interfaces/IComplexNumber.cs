@@ -1,6 +1,6 @@
 ﻿namespace Solution.Interfaces
 {
-    interface IComplexNumber
+    public interface IComplexNumber
     {
         /// <summary>
         /// Действительная часть
@@ -13,21 +13,21 @@
         double ImaginaryPart { get; set; }
 
         /// <summary>
-        /// получает сумму комплексных чисел
+        /// получает новый объект равный сумме комплексных чисел
         /// </summary>
         /// <param name="addend">слагаемое 2</param>
         /// <returns>Новый экземпляр IStudyAssignment</returns>
         IStudyAssignment Add(IComplexNumber addend);
 
         /// <summary>
-        /// получает разность комплексных чисел
+        /// получает новый объект равный разности комплексных чисел
         /// </summary>
         /// <param name="subtrahend">вычитаемое</param>
         /// <returns>Новый экземпляр IStudyAssignment</returns>
         IStudyAssignment Sub(IComplexNumber subtrahend);
 
         /// <summary>
-        /// получает произведение комплексных чисел
+        /// получает новый объект равный произведению комплексных чисел
         /// </summary>
         /// <param name="factor">множитель</param>
         /// <returns>Новый экземпляр IStudyAssignment</returns>

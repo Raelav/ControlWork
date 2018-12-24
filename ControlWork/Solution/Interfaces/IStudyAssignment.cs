@@ -3,7 +3,7 @@
     /// <summary>
     /// Интерфейс взаимодествия с консолью
     /// </summary>
-    interface IStudyAssignment
+    public interface IStudyAssignment
     {
         void Run();
     }

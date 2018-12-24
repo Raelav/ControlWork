@@ -2,7 +2,7 @@
 
 namespace Solution.Factories
 {
-    abstract class SolutionFactory
+    public abstract class SolutionFactory
     {
         /// <summary>
         /// Имя фабрики
