@@ -71,6 +71,7 @@
     <Compile Include="Factories\PolynomialFactory.cs" />
     <Compile Include="Factories\RationalFractionFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
+    <Compile Include="Factories\ThreeDVectorFactory.cs" />
     <Compile Include="Interfaces\IChainList.cs" />
     <Compile Include="Interfaces\IComplexNumber.cs" />
     <Compile Include="Interfaces\ICounter.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="View\NDimensionalVectorView.cs" />
     <Compile Include="View\PolynomialView.cs" />
     <Compile Include="View\RationalFractionView.cs" />
+    <Compile Include="View\ThreeDVectorView.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

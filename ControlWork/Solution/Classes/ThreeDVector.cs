@@ -1,40 +1,36 @@
 ﻿using System;
 using Solution.Interfaces;
 using Solution.Enums;
+using Solution.View;
+using Solution.Factories;
 
 namespace Solution.Classes
 {
-    public class ThreeDVector : IThreeDVector, IStudyAssignment
+    class ThreeDVector : IThreeDVector, IStudyAssignment
     {
-        private double _x;
-        private double _y;
-        private double _z;
         private double[] _vector = new double[3];
 
         public double X
         {
-            get { return _x; }
+            get { return _vector[0]; }
             set
             {
-                _x = value;
                 _vector[0] = value;
             }
         }
         public double Y
         {
-            get { return _y; }
+            get { return _vector[1]; }
             set
             {
-                _y = value;
                 _vector[1] = value;
             }
         }
         public double Z
         {
-            get { return _z; }
+            get { return _vector[2]; }
             set
             {
-                _z = value;
                 _vector[2] = value;
             }
         }
@@ -101,7 +97,10 @@ namespace Solution.Classes
         private IThreeDVector Adder(IThreeDVector vector, AdderArgument type)
         {
             return new ThreeDVector()
-            { X = vector[0] * (int)type, Y = vector[1] * (int)type, Z = vector[2] * (int)type }; 
+            {
+                X = X + vector[0] * (int)type,
+                Y = Y + vector[1] * (int)type,
+                Z = Z + vector[2] * (int)type }; 
         }
 
         public int Compare(IThreeDVector value)
@@ -117,6 +116,7 @@ namespace Solution.Classes
         public IThreeDVector VectorMultiply(IThreeDVector factor)
         {
             var result = new ThreeDVector();
+
             result[0] = Y * factor[2] - Z * factor[1];
             result[1] = Z * factor[0] - X * factor[2];
             result[2] = X * factor[1] - Y * factor[0];
@@ -125,7 +125,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new ThreeDVectorView().Main(new ThreeDVectorFactory());
         }
     }
 }
