@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Solution.Interfaces;
+using Solution.View;
+using Solution.Factories;
+using System.Text;
 
 namespace Solution.Classes
 {
@@ -12,6 +15,14 @@ namespace Solution.Classes
     {
         private LinkedList<string> _list = new LinkedList<string>();
 
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+            foreach (var e in _list)
+                result.Append(e + "\r\n");
+            return result.ToString();
+        }
+
         public void AddLast(string value)
         {
             _list.AddLast(value);
@@ -22,6 +33,10 @@ namespace Solution.Classes
             _list.AddFirst(value);
         }
 
+        /// <summary>
+        /// delete string from list by value
+        /// </summary>
+        /// <param name="value">string for delete</param>
         public void Remove(string value)
         {
             _list.Remove(value);
@@ -48,7 +63,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new ChainListView().Main(new ChainListFactory());
         }
     }
 }

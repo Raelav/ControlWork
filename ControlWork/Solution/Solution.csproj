@@ -64,6 +64,7 @@
     <Compile Include="Client\TitlePageFactory.cs" />
     <Compile Include="Enums\AdderArgument.cs" />
     <Compile Include="Enums\PlayingCard.cs" />
+    <Compile Include="Factories\ChainListFactory.cs" />
     <Compile Include="Factories\ComplexNumberFactory.cs" />
     <Compile Include="Factories\DateFactory.cs" />
     <Compile Include="Factories\MailingAddressFactory.cs" />
@@ -96,6 +97,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\ChainListView.cs" />
     <Compile Include="View\ComplexNumberView.cs" />
     <Compile Include="View\DateView.cs" />
     <Compile Include="View\MailingAddressView.cs" />
