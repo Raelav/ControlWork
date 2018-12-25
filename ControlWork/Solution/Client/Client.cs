@@ -16,9 +16,11 @@ namespace Solution.Client
             new RationalFractionFactory(),
             new DateFactory(),
             new PolynomialFactory(),
+            new NDimensionalVectorFactory(),
             new MailingAddressFactory(),
             new ThreeDVectorFactory(),    
             new ChainListFactory(),
+            new OneDArrayFactory(),
         };
 
         /// <summary>

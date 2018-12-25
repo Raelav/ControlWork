@@ -45,7 +45,7 @@ namespace Solution.View
             {
                 inputString = Console.ReadLine();
                 if(inputString != "")
-                    obj.AddFirst(inputString);
+                    obj.AddLast(inputString);
             } while (inputString != "");
             Rendering(obj);
         }

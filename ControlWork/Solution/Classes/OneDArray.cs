@@ -1,6 +1,9 @@
 ﻿using System;
 using Solution.Interfaces;
 using Solution.Enums;
+using Solution.View;
+using Solution.Factories;
+using System.Text;
 
 namespace Solution.Classes
 {
@@ -64,8 +67,24 @@ namespace Solution.Classes
             }
         }
 
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+            if (Length > 0)
+            {
+                result.Append(array[0]);
+                for(var i = 1; i < StartIndex + Length; i++)
+                {
+                    result.Append(" " + array[i]);
+                }
+            }
+            return result.ToString();
+        }
+
         public OneDArray(int startIndex, int length)
         {
+            StartIndex = startIndex;
+            Length = length;
             array = new int[startIndex + length];
         }
         public OneDArray() : this(0, 1) { }
@@ -119,7 +138,7 @@ namespace Solution.Classes
             var maxIndex = StartIndex;
             for(var i = StartIndex + 1; i < StartIndex + Length; i++)
             {
-                if (this[i] > maxIndex) maxIndex = this[i];
+                if (this[i] > this[maxIndex]) maxIndex = i;
             }
             return maxIndex;
         }
@@ -129,7 +148,7 @@ namespace Solution.Classes
             var minIndex = StartIndex;
             for (var i = StartIndex + 1; i < StartIndex + Length; i++)
             {
-                if (this[i] < minIndex) minIndex = this[i];
+                if (this[i] < this[minIndex]) minIndex = i;
             }
             return minIndex;
         }
@@ -159,7 +178,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new OneDArrayView().Main(new OneDArrayFactory());
         }
     }
 }
