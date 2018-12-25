@@ -45,6 +45,17 @@ namespace Solution.Classes
         }
         public NDimensionalVector() : this(new double[] { 0 }) { }
 
+        public override string ToString()
+        {
+            string result = "";
+            for (var i = 0; i < Count - 1; i++)
+            {
+                result += this[i] + " ";
+            }
+            result += this[Count - 1];
+            return result;
+        }
+
         public INDimensionalVector Add(INDimensionalVector addend)
         {
             return Adder(addend, AdderArgument.Add);

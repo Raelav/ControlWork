@@ -3,6 +3,8 @@ using Solution.Interfaces;
 using Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Collections.Generic;
+using Solution.View;
+using Solution.Factories;
 
 namespace Solution.Classes
 {
@@ -62,7 +64,8 @@ namespace Solution.Classes
             }
         }
 
-        public MailingAddress(string name, string city, string street, string homeAddress, string postalCode)
+        public MailingAddress(string name = "ForExample", string city = "Alapayevsk"
+            , string street = "Lenina", string homeAddress = "1 apt.1", string postalCode = "624600")
         {
             City = city;
             Name = name;
@@ -70,27 +73,50 @@ namespace Solution.Classes
             HomeAddress = homeAddress;
             PostalCode = postalCode;
         }
-        public MailingAddress() : this("ForExample", "Alapayevsk", "Lenina", "1 apt.1", "624600") { }
 
         public void CreateAdvertisement()
         {
-            WorkInMicrosoftWord("advertising");
+            WorkWithMicrosoftWord(Properties.Resources.advertising, "advertising");
         }
 
         public void CreateEnvelope()
         {
-            WorkInMicrosoftWord("envelope");
+            WorkWithMicrosoftWord(Properties.Resources.envelope, "envelope");
         }
 
-        private void WorkInMicrosoftWord(string type)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="template">Template extracted from resources</param>
+        /// <param name="typeName">Name of the required template</param>
+        private void WorkWithMicrosoftWord(byte[] template, string typeName)
         {
             Application app = new Application();
-            var template = Environment.CurrentDirectory + "\\MailingAddress\\" + type + ".docx";
+            var wayToResult = CreateFile(typeName);
+            File.WriteAllBytes(wayToResult, template);           
             object missing = Type.Missing;
-            var doc = GetDocument(app, template, type.Substring(0, 1).ToUpper() + type.Substring(1), missing);
+            var doc = GetDocument(app, wayToResult, typeName.Substring(0, 1).ToUpper() + typeName.Substring(1), missing);
             OpenSolution(missing, app, doc);
         }
 
+        /// <summary>
+        /// Create empty file for writing a template
+        /// </summary>
+        /// <param name="typeName"></param>
+        /// <returns></returns>
+        private string CreateFile(string typeName)
+        {
+            var path = $"{Environment.CurrentDirectory}//{Name}{typeName}.docx";
+            File.Create(path).Close();        
+            return path;
+        }
+
+        /// <summary>
+        /// replaces the specified areas with the corresponding value
+        /// </summary>
+        /// <param name="missing"></param>
+        /// <param name="app"></param>
+        /// <param name="doc"></param>
         private void OpenSolution(object missing, Application app, Document doc)
         {
             foreach(var e in replacementFormat)
@@ -107,11 +133,18 @@ namespace Solution.Classes
             app.Visible = true;
         }
 
+        /// <summary>
+        /// Prepare document for writing
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="template"></param>
+        /// <param name="typeName"></param>
+        /// <param name="missing"></param>
+        /// <returns></returns>
         private Document GetDocument(Application app, string template, string typeName, object missing)
         {
             Document doc = null;
-
-            object fileName = CreateFile(typeName, template);
+            object fileName = template;
             object falseValue = false;
             object trueValue = true;
 
@@ -126,29 +159,9 @@ ref missing, ref missing, ref missing);
             return doc;
         }
 
-        private string CreateFile(string typeName, string template)
-        {
-            int copyNum = 1;
-            CreateCopyOfTemplate(ref copyNum, typeName, template);
-            return $"{Environment.CurrentDirectory}\\MailingAddress\\{Name}{typeName}{copyNum}.docx";
-        }
-
-        private void CreateCopyOfTemplate(ref int copyNum, string typeName, string template)
-        {
-            try
-            {
-                File.Copy(template, $"{Environment.CurrentDirectory}\\MailingAddress\\{Name}{typeName}{copyNum}.docx");
-            }
-            catch (IOException e)
-            {
-                copyNum++;
-                CreateCopyOfTemplate(ref copyNum, typeName, template);
-            }
-        }
-
         public void Run()
         {
-            throw new NotImplementedException();
+            new MailingAddressView().Main(new MailingAddressFactory());
         }
     }
 }

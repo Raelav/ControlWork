@@ -4,7 +4,7 @@ using Solution.Classes;
 
 namespace Solution.Factories
 {
-    class NDimensionalVectorFactory : SolutionFactory
+    public class NDimensionalVectorFactory : SolutionFactory
     {
         public override string Name
         {

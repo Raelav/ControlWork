@@ -15,7 +15,8 @@ namespace Solution.Client
             new ComplexNumberFactory(),
             new RationalFractionFactory(),
             new DateFactory(),
-            new PolynomialFactory()
+            new PolynomialFactory(),
+            new MailingAddressFactory()
         };
 
         /// <summary>
