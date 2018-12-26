@@ -68,6 +68,7 @@
     <Compile Include="Factories\ComplexNumberFactory.cs" />
     <Compile Include="Factories\DateFactory.cs" />
     <Compile Include="Factories\MailingAddressFactory.cs" />
+    <Compile Include="Factories\MessageLogFactory.cs" />
     <Compile Include="Factories\NDimensionalVectorFactory.cs" />
     <Compile Include="Factories\OneDArrayFactory.cs" />
     <Compile Include="Factories\PolynomialFactory.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="View\ComplexNumberView.cs" />
     <Compile Include="View\DateView.cs" />
     <Compile Include="View\MailingAddressView.cs" />
+    <Compile Include="View\MessageLogView.cs" />
     <Compile Include="View\NDimensionalVectorView.cs" />
     <Compile Include="View\OneDArrayView.cs" />
     <Compile Include="View\PolynomialView.cs" />

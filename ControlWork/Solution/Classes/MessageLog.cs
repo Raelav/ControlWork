@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using Solution.Interfaces;
+using Solution.View;
+using Solution.Factories;
+using System.Diagnostics;
 
 namespace Solution.Classes
 {
@@ -29,30 +32,31 @@ namespace Solution.Classes
         public void OutputToFile()
         {
             int fileNum = 1;
-            var fileDirectory = $"{Environment.CurrentDirectory}\\MessageLog";
+            var fileDirectory = $"{Environment.CurrentDirectory}";
             if (!Directory.Exists(fileDirectory))
                 Directory.CreateDirectory(fileDirectory);
             CreateFile(ref fileNum, fileDirectory);
-            WriteToFile($"{fileDirectory}//MessageLog{fileNum}.txt");
+            WriteToFile($"{fileDirectory}//message{fileNum}.txt");
         }
 
         private void WriteToFile(string path)
         {
             var result = "";
-            foreach(var upElem in magazine)
+            foreach(var message in magazine)
             {
-                result += upElem.Key + "\r\n\r\n";
-                foreach(var bottomElem in upElem.Value)
-                    result += "\t"+ bottomElem.Value + "\r\n\t" + bottomElem.Key + "\r\n\r\n";
+                result += message.Key + "\r\n\r\n";
+                foreach(var author in message.Value)
+                    result += "\tAuthor:   "+ author.Value + "\r\n\tMessage: " + author.Key + "\r\n\r\n";
             }
             File.WriteAllText(path, result);
+            Process.Start(path);
         }
 
         private void CreateFile(ref int fileNum, string fileDirectory)
         {
             try
             {
-                File.Create($"{fileDirectory}//MessageLog{fileNum}.txt").Close();
+                File.Create($"{fileDirectory}//message{fileNum}.txt").Close();
             }
             catch(IOException e)
             {
@@ -63,7 +67,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new MessageLogView().Main(new MessageLogFactory());
         }
     }
 }

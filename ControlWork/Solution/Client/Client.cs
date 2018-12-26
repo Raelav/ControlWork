@@ -21,6 +21,7 @@ namespace Solution.Client
             new ThreeDVectorFactory(),    
             new ChainListFactory(),
             new OneDArrayFactory(),
+            new MessageLogFactory(),
         };
 
         /// <summary>
