@@ -11,7 +11,7 @@ namespace Solution.View
             Console.WriteLine(
     @"Многочлены
 
-Введите через пробел коэффиценты чначала первого потом второго многочлена:");
+Введите через пробел коэффиценты cначала первого потом второго многочлена:");
 
             var value1 = Console.ReadLine();
             var value2 = Console.ReadLine();
