@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using Solution.Interfaces;
+using Solution.Factories;
+using Solution.View;
 
 namespace Solution.Classes
 {
     class OneDStringArray : IOneDStringArray, IStudyAssignment
     {
         private string[] _array;
-        private int _length;
 
         public int Length
         {
             get
             {
-                return _length;
+                return _array.Length;
             }
             set
             {
@@ -21,7 +22,10 @@ namespace Solution.Classes
                 if (value < 0)
                     Console.WriteLine("Нельзя создать массив отрицательной длинны");
                 //инициализируем массив
-                else _array = new string[value];
+                else
+                {
+                    _array = new string[value];
+                }
             }
         }
 
@@ -44,7 +48,7 @@ namespace Solution.Classes
             {
                 try
                 {
-                    this[index] = value;
+                    _array[index] = value;
                 }
                 catch(IndexOutOfRangeException e)
                 {
@@ -57,7 +61,6 @@ namespace Solution.Classes
         {
             Length = length;
         }
-
 
         public IOneDStringArray Concat(IOneDStringArray array)
         {
@@ -97,7 +100,10 @@ namespace Solution.Classes
         {
             var index = 0;
             foreach(var e in list)
+            {
                 array[index] = e;
+                index++;
+            }               
             return array;
         }
 
@@ -117,7 +123,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new OneDStringArrayView().Main(new OneDStringArrayFactory());
         }
     }
 }

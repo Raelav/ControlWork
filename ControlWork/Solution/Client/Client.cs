@@ -22,6 +22,7 @@ namespace Solution.Client
             new ChainListFactory(),
             new OneDArrayFactory(),
             new MessageLogFactory(),
+            new OneDStringArrayFactory(),
         };
 
         /// <summary>
