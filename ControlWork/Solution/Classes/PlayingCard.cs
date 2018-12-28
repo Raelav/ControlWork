@@ -82,7 +82,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            new View.PlayingCardView().Main(new Factories.PlayingCardFactory());
+            throw new NotImplementedException();
         }
     }
 }

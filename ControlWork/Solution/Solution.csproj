@@ -72,7 +72,6 @@
     <Compile Include="Factories\NDimensionalVectorFactory.cs" />
     <Compile Include="Factories\OneDArrayFactory.cs" />
     <Compile Include="Factories\OneDStringArrayFactory.cs" />
-    <Compile Include="Factories\PlayingCardFactory.cs" />
     <Compile Include="Factories\PolynomialFactory.cs" />
     <Compile Include="Factories\RationalFractionFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
@@ -110,7 +109,6 @@
     <Compile Include="View\NDimensionalVectorView.cs" />
     <Compile Include="View\OneDArrayView.cs" />
     <Compile Include="View\OneDStringArrayView.cs" />
-    <Compile Include="View\PlayingCardView.cs" />
     <Compile Include="View\PolynomialView.cs" />
     <Compile Include="View\RationalFractionView.cs" />
     <Compile Include="View\ThreeDVectorView.cs" />
