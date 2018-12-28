@@ -23,6 +23,7 @@ namespace Solution.Client
             new OneDArrayFactory(),
             new MessageLogFactory(),
             new OneDStringArrayFactory(),
+            new TriangleABCFactory(),
         };
 
         /// <summary>

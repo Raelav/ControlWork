@@ -58,6 +58,11 @@ namespace Solution.Classes
             CA = ca;
         }
 
+        /// <summary>
+        /// Pythagorean triangle default
+        /// </summary>
+        public TriangleABC() : this(3, 4, 5) { }
+
         public double Area
         {
             get
@@ -100,10 +105,10 @@ namespace Solution.Classes
             GetSpecialValues(out squareLongerSide, out sumSquareOtherSides);
 
             if (squareLongerSide == sumSquareOtherSides)
-                Console.WriteLine("Треугольник прямоугольный");
+                Console.Write("Треугольник прямоугольный");
             else if (squareLongerSide < sumSquareOtherSides)
-                Console.WriteLine("Треугольник остроугольный");
-            else Console.WriteLine("Треугольник тупоугольный");
+                Console.Write("Треугольник остроугольный");
+            else Console.Write("Треугольник тупоугольный");
         }
 
         private void GetSpecialValues(out double squareLongerSide, out double sumSquareOtherSides)
@@ -128,15 +133,15 @@ namespace Solution.Classes
         public void PrintView()
         {
             if (AB == BC && BC == CA)
-                Console.WriteLine("Треугольник равносторонний");
+                Console.Write("Треугольник равносторонний");
             else if(AB != BC && AB != CA && BC != CA)
-                Console.WriteLine("Треугольник разносторонний");
-            else Console.WriteLine("Треугольник равнобедренный");
+                Console.Write("Треугольник разносторонний");
+            else Console.Write("Треугольник равнобедренный");
         }
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new View.TriangleABCView().Main(new Factories.TriangleABCFactory());
         }
     }
 }
