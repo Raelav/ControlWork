@@ -1,7 +1,12 @@
-﻿namespace Solution.Interfaces
+﻿using Solution.Enums;
+
+namespace Solution.Interfaces
 {
     public interface IPlayingCard
     {
+        CardSuit CardSuit { get; }
+
+
         /// <summary>
         /// Цвет масти
         /// </summary>

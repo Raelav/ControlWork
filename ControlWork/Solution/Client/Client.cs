@@ -24,6 +24,7 @@ namespace Solution.Client
             new MessageLogFactory(),
             new OneDStringArrayFactory(),
             new TriangleABCFactory(),
+            new PlayingCardFactory(),
         };
 
         /// <summary>
