@@ -25,6 +25,7 @@ namespace Solution.Client
             new OneDStringArrayFactory(),
             new TriangleABCFactory(),
             new PlayingCardFactory(),
+            new SquareMatrixFactory(),
         };
 
         /// <summary>

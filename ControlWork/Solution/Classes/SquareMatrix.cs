@@ -1,6 +1,7 @@
 ﻿using System;
 using Solution.Interfaces;
 using Solution.Enums;
+using System.Text;
 
 namespace Solution.Classes
 {
@@ -47,7 +48,23 @@ namespace Solution.Classes
         {
             _matrix = matrix;
         }
+        public SquareMatrix(int rank) : this(new double[rank, rank]) { }
         public SquareMatrix() : this(new double[3,3]){}
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+            for(var i = 0; i < Rank; i++)
+            {
+                for (var j = 0; j < Rank; j++)
+                {
+                    result.Append(this[i, j]);
+                    if (j < Rank - 1) result.Append(" | ");
+                }
+                result.Append("\r\n");
+            }
+            return result.ToString();  
+        }
 
         public ISquareMatrix Add(ISquareMatrix added)
         {
@@ -99,7 +116,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new View.SquareMatrixView().Main(new Factories.SquareMatrixFactory());
         }
     }
 }
