@@ -27,6 +27,7 @@ namespace Solution.Client
             new PlayingCardFactory(),
             new SquareMatrixFactory(),
             new RectangleFactory(),
+            new CounterFactory()
         };
 
         /// <summary>

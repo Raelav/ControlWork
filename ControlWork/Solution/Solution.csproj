@@ -66,6 +66,7 @@
     <Compile Include="Enums\PlayingCard.cs" />
     <Compile Include="Factories\ChainListFactory.cs" />
     <Compile Include="Factories\ComplexNumberFactory.cs" />
+    <Compile Include="Factories\CounterFactory.cs" />
     <Compile Include="Factories\DateFactory.cs" />
     <Compile Include="Factories\MailingAddressFactory.cs" />
     <Compile Include="Factories\MessageLogFactory.cs" />
@@ -106,6 +107,7 @@
     </Compile>
     <Compile Include="View\ChainListView.cs" />
     <Compile Include="View\ComplexNumberView.cs" />
+    <Compile Include="View\CounterView.cs" />
     <Compile Include="View\DateView.cs" />
     <Compile Include="View\MailingAddressView.cs" />
     <Compile Include="View\MessageLogView.cs" />

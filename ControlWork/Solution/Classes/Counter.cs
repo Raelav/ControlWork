@@ -14,9 +14,7 @@ namespace Solution.Classes
             get { return _min; }
             set
             {
-                if (value > _max)
-                    Console.WriteLine("Минимальное значение счетчика не может быть больше максимального");
-                else _min = value;
+                _min = value;
             }
         }
 
@@ -25,9 +23,7 @@ namespace Solution.Classes
             get { return _max; }
             set
             {
-                if (value < _min)
-                    Console.WriteLine("Максимальное значение счетчика не может быть меньше минимального");
-                else _max = value;
+                _max = value;
             }
         }
 
@@ -65,6 +61,11 @@ namespace Solution.Classes
         }
         public Counter() : this(0, 23) { }
 
+        public override string ToString()
+        {
+            return $"{Current} ({Min} - {Max})";
+        }
+
         public void Dec()
         {
             Current--;
@@ -72,9 +73,7 @@ namespace Solution.Classes
 
         public void End(int newEnd)
         {
-            if (newEnd < Min)
-                Console.WriteLine("Максимальное значение счетчика не может быть меньше минимального");
-            else
+            if (newEnd > Min)
             {
                 Max = newEnd;
                 Current = Min;
@@ -88,9 +87,7 @@ namespace Solution.Classes
 
         public void Start(int newStart)
         {
-            if (newStart > Max)
-                Console.WriteLine("Минимальное значение счетчика не может быть больше максимального");
-            else
+            if (newStart < Max)
             {
                 Min = newStart;
                 Current = Min;
@@ -99,7 +96,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new View.CounterView().Main(new Factories.CounterFactory());
         }
     }
 }

@@ -7,6 +7,9 @@
         /// </summary>
         int Current { get; }
 
+        int Max { get; }
+        int Min { get; }
+
         /// <summary>
         /// Инкремент
         /// </summary>
