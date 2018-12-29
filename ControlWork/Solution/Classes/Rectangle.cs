@@ -75,7 +75,7 @@ namespace Solution.Classes
 
         public void Run()
         {
-            throw new NotImplementedException();
+            new View.RectangleView().Main(new Factories.RectangleFactory());
         }
     }
 }

@@ -75,6 +75,7 @@
     <Compile Include="Factories\PlayingCardFactory.cs" />
     <Compile Include="Factories\PolynomialFactory.cs" />
     <Compile Include="Factories\RationalFractionFactory.cs" />
+    <Compile Include="Factories\RectangleFactory.cs" />
     <Compile Include="Factories\SolutionFactory.cs" />
     <Compile Include="Factories\SquareMatrixFactory.cs" />
     <Compile Include="Factories\ThreeDVectorFactory.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="View\PlayingCardView.cs" />
     <Compile Include="View\PolynomialView.cs" />
     <Compile Include="View\RationalFractionView.cs" />
+    <Compile Include="View\RectangleView.cs" />
     <Compile Include="View\SquareMatrixView.cs" />
     <Compile Include="View\ThreeDVectorView.cs" />
     <Compile Include="View\TriangleABCView.cs" />
